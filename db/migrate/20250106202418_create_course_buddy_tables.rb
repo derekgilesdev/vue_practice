@@ -3,14 +3,10 @@ class CreateCourseBuddyTables < ActiveRecord::Migration[8.0]
     # Users table
     create_table :users do |t|
       t.string :name, null: false
-      t.string :email, null: false
-      t.string :password_digest, null: false
       t.integer :role, null: false, default: 0 # 'student' or 'instructor'
 
       t.timestamps
     end
-
-    add_index :users, :email, unique: true
 
     # Courses table
     create_table :courses do |t|
