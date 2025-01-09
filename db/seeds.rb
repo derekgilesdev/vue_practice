@@ -15,13 +15,14 @@ instructor = User.create!(
   name: "Dr. Jane Smith",
   email: "jane.smith@college.edu",
   password: "password",
-  role: "instructor"
+  role: :instructor,
+  confirmed_at: Time.current
 )
 
 students = [
-  User.create!(name: "John Doe", email: "john.doe@student.edu", password: "password"),
-  User.create!(name: "Alice Johnson", email: "alice.johnson@student.edu", password: "password"),
-  User.create!(name: "Bob Brown", email: "bob.brown@student.edu", password: "password")
+  User.create!(name: "John Doe", email: "john.doe@student.edu", password: "password", confirmed_at: Time.current),
+  User.create!(name: "Alice Johnson", email: "alice.johnson@student.edu", password: "password", confirmed_at: Time.current),
+  User.create!(name: "Bob Brown", email: "bob.brown@student.edu", password: "password", confirmed_at: Time.current)
 ]
 
 # Courses
